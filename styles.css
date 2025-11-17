@@ -1,0 +1,248 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+  
+header {
+    background: #050505;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(74, 144, 226, 0.5);
+}
+  
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.product {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s ease;
+}
+  
+.product:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+  
+.product img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+  
+.product h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #222;
+}
+  
+.buy-btn {
+    background: #f38a00;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+  
+.buy-btn:hover {
+    background: #357abd;
+}
+  
+/* MODAL */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Agora o modal fica retangular, não mais comprido em pé */
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 80px auto;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* A imagem terá tamanho controlado e não vai esticar verticalmente */
+.modal-content img {
+    width: 50%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
+  
+/* Estilo da seção de comentários */
+.comments-section {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+#comments-list {
+    list-style: none;
+    margin-top: 1rem;
+    padding-left: 0;
+}
+
+#comments-list li {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+}
+
+#comment-name {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+    resize: none;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 1rem;
+    resize: none;
+}
+
+button.btn {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+button.btn:hover {
+    background: #357abd;
+}
+
+/* Ícone do Carrinho */
+.cart-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-icon span {
+    margin-left: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* Modal do Carrinho */
+  #cart-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  #cart-modal .modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 80px auto;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #cart-items-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  
+  #cart-items-list li {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  #cart-total {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  button#checkout-btn {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  
+  button#checkout-btn:hover {
+    background: #357abd;
+  }
+  
